@@ -167,7 +167,13 @@ def evaluate_lstm(y_val, y_val_pred, y_test, y_test_pred, X_val, X_test, plot_fi
 
     # Convert the results list to a DataFrame and return it
     results_df = pd.DataFrame(results)
+    # Print LaTeX rows with ampersands
+    for idx, row in results_df.iterrows():
+        
+        print(f" & {row['Metric']} & {row['MAE']:.1f} & {row['DAE']:.1f} & {row['RMAE']} & {row['RMSE']:.1f} & {row['R2']:.2f} & {row['LP']:.1f} \\\\")
 
+    if plot_fig:
+        plot_fig(y_test, y_test_pred)
     # If a plotting function is provided, execute it
     if plot_fig:
         plot_fig(y_test, y_test_pred)  # Execute the plot function
