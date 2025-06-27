@@ -79,8 +79,7 @@ def evaluate_model(y_val, y_val_pred, y_test, y_test_pred, X_val, X_test, plot_f
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import mean_absolute_error, mean_squared_error
-from sklearn.metrics import r2_score
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 def evaluate_lstm(y_val, y_val_pred, y_test, y_test_pred, X_val, X_test, plot_fig=None):
     # Helper function to calculate DAE (Daily Average Error)
@@ -131,7 +130,7 @@ def evaluate_lstm(y_val, y_val_pred, y_test, y_test_pred, X_val, X_test, plot_fi
         'DAE': dae_val,
         'RMSE': rmse_val,
         'R2': r2_val,
-        'Lower Predictions (%)': lower_predictions_val
+        'LP (%)': lower_predictions_val
     })
 
     # Evaluate performance on the test set using MAE
@@ -161,7 +160,7 @@ def evaluate_lstm(y_val, y_val_pred, y_test, y_test_pred, X_val, X_test, plot_fi
         'RMSE': rmse_test,
         'DAE': dae_test,
         'R2': r2_test,
-        'Lower Predictions (%)': lower_predictions_test
+        'LP (%)': lower_predictions_test
     })
 
 
@@ -170,7 +169,7 @@ def evaluate_lstm(y_val, y_val_pred, y_test, y_test_pred, X_val, X_test, plot_fi
     # Print LaTeX rows with ampersands
     for idx, row in results_df.iterrows():
         
-        print(f" & {row['Metric']} & {row['MAE']:.1f} & {row['DAE']:.1f} & {row['RMAE']} & {row['RMSE']:.1f} & {row['R2']:.2f} & {row['LP']:.1f} \\\\")
+        print(f" & {row['Metric']} & {row['MAE']:.1f} & {row['DAE']:.1f} & {'x'} & {row['RMSE']:.1f} & {row['R2']:.2f} & {row['LP (%)']:.1f} \\\\")
 
     if plot_fig:
         plot_fig(y_test, y_test_pred)

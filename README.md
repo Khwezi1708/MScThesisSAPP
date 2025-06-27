@@ -1,2 +1,2 @@
 # MScThesisSAPP
- Repository for Khwezi Rasmussen's Masters Thesis in the Southern African Power Pool exploring AI and renewable energy dynamics.
+Repository for Khwezi Rasmussen's Master's thesis on AI-driven forecasting and renewable energy dynamics in the Southern African Power Pool (SAPP). This project explores multiple forecasting algorithms, including LEAR, LSTM, and hybrid LSTMs combined with Wavelet Transforms and Convolutional Neural Networks (CNNs). It also includes exploratory data analysis of datasets from the Zambezi River Authority, Day-Ahead Market prices within the SAPP, and a solar generation profile relevant to the region. 
